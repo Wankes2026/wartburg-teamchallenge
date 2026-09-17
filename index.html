@@ -44,7 +44,7 @@ async function submitAnswer(){
 
     let d=await r.json();
 
-    if(!r.ok)throw new Error(d.error||'Fehler');
+   throw new Error(d.message || d.error || ('Serverfehler ' + r.status));
 
     document.getElementById('answerMsg').innerHTML=
       '<p class="notice ok">Antwort gespeichert.<br>Punkte für diese Frage: '+d.points+'</p>';
