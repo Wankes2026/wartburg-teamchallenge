@@ -18,7 +18,53 @@ function show(id){document.querySelectorAll('section').forEach(x=>x.classList.ad
 async function loadQuestions(){let r=await fetch('questions.json');let d=await r.json();questions=d.questions.map(x=>({...x,options:[...x.options]}));}
 function loginTeam(){const t=teams.find(x=>x.token===document.getElementById('teamToken').value.trim());if(!t){document.getElementById('loginMsg').innerHTML='<p class="notice err">Ungültiger Team-Code.</p>';return}currentTeam=t;let key='wartburg_'+t.id+'_order';let order=JSON.parse(localStorage.getItem(key)||'null');if(!order){order=questions.map((_,i)=>i);for(let i=order.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]]}localStorage.setItem(key,JSON.stringify(order))}currentTeam.order=order;currentIndex=0;selected=null;document.getElementById('teamName').textContent=t.name;document.getElementById('teamMotto').textContent=t.motto;show('team');renderQuestion();startPoll();}
 function renderQuestion(){let q=questions[currentTeam.order[currentIndex]];document.getElementById('qNo').textContent=currentIndex+1;document.getElementById('teamScore').textContent='…';document.getElementById('roomHint').textContent='';document.getElementById('qText').textContent=q.text;let box=document.getElementById('options');box.innerHTML='';selected=null;q.options.forEach((o,i)=>{let b=document.createElement('button');b.className='option';b.textContent=o;b.onclick=()=>{selected=o;document.querySelectorAll('.option').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')};box.appendChild(b)});document.getElementById('answerBtn').disabled=false;document.getElementById('answerMsg').innerHTML='';}
-async function submitAnswer(){if(!selected)return;let q=questions[currentTeam.order[currentIndex]];let btn=document.getElementById('answerBtn');btn.disabled=true;document.getElementById('answerMsg').innerHTML='Antwort wird zentral erfasst …';if(API_ENDPOINT.startsWith('PASTE_')){document.getElementById('answerMsg').innerHTML='<p class="notice">Der Server-Endpunkt ist noch nicht eingetragen. Bitte in index.html API_ENDPOINT setzen.</p>';btn.disabled=false;return}try{let r=await fetch(API_ENDPOINT+'/answer',{method:'POST',headers:{'Content-Type':'application/json', 'X-Team-Token':currentTeam.token},body:JSON.stringify({teamId:currentTeam.id,questionId:q.id,answer:selected,clientSentAt:Date.now()})});let d=await r.json();if(!r.ok)throw new Error(d.error||'Fehler');document.getElementById('answerMsg').innerHTML='<p class="notice ok">Antwort gespeichert. Punkte für diese Frage: '+d.points+'</p>';setTimeout(()=>{if(currentIndex<24){currentIndex++;renderQuestion()}else{document.getElementById('answerMsg').innerHTML+='<p><b>Quiz abgeschlossen!</b></p>'}},1000)}catch(e){document.getElementById('answerMsg').innerHTML='<p class="notice err">'+e.message+'</p>';btn.disabled=false}}
+async function submitAnswer(){
+  if(!selected)return;
+
+  let q=questions[currentTeam.order[currentIndex]];
+  let btn=document.getElementById('answerBtn');
+
+  btn.disabled=true;
+  document.getElementById('answerMsg').textContent='Antwort wird zentral erfasst …';
+
+  try{
+    let r=await fetch(API_ENDPOINT+'/answer',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'X-Team-Token':currentTeam.token
+      },
+      body:JSON.stringify({
+        teamId:currentTeam.id,
+        questionId:q.id,
+        answer:selected,
+        clientSentAt:Date.now()
+      })
+    });
+
+    let d=await r.json();
+
+    if(!r.ok)throw new Error(d.error||'Fehler');
+
+    document.getElementById('answerMsg').innerHTML=
+      '<p class="notice ok">Antwort gespeichert.<br>Punkte für diese Frage: '+d.points+'</p>';
+
+    setTimeout(()=>{
+      if(currentIndex<24){
+        currentIndex++;
+        renderQuestion();
+      }else{
+        document.getElementById('answerMsg').innerHTML+=
+          '<p><b>Quiz abgeschlossen!</b></p>';
+      }
+    },1000);
+
+  }catch(e){
+    document.getElementById('answerMsg').innerHTML=
+      '<p class="notice err">'+e.message+'</p>';
+    btn.disabled=false;
+  }
+}
 function startPoll(){clearInterval(pollTimer);pollTimer=setInterval(refreshScore,2500);refreshScore()}
 async function refreshScore(){if(!currentTeam||API_ENDPOINT.startsWith('PASTE_'))return;try{let r=await fetch(API_ENDPOINT+'/team-state',{headers:{'X-Team-Token':currentTeam.token}});let d=await r.json();let t=d.teams?.find(x=>x.id===currentTeam.id);if(t)document.getElementById('teamScore').textContent=t.score||0}catch(e){}}
 async function loginAdmin(){if(API_ENDPOINT.startsWith('PASTE_')){document.getElementById('adminMsg').innerHTML='<p class="notice">Server-Endpunkt fehlt noch.</p>';return}try{let r=await fetch(API_ENDPOINT+'/admin',{headers:{'X-Admin-Secret':document.getElementById('adminSecret').value}});if(!r.ok)throw new Error('Zugang verweigert');sessionStorage.setItem('adminSecret',document.getElementById('adminSecret').value);show('admin');refreshAdmin();setInterval(refreshAdmin,2500)}catch(e){document.getElementById('adminMsg').innerHTML='<p class="notice err">'+e.message+'</p>'}}
