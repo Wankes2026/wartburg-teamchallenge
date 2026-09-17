@@ -1,0 +1,342 @@
+{
+  "answerWindowMs": 45,
+  "teams": [
+    {
+      "id": "algorithmus-ritter",
+      "name": "Algorithmus-Ritter",
+      "motto": "Die Burg-Krisenzentrale",
+      "room": "Lutherstube",
+      "token": "wj3WoA3vqCb6wnZJG0yBwTSq"
+    },
+    {
+      "id": "daten-minnesaenger",
+      "name": "Daten-Minnesänger",
+      "motto": "Der Wartburg-Song auf Dienstreise",
+      "room": "Sängersaal",
+      "token": "d40vMjwXGKyRtf6FAScxkDZh"
+    },
+    {
+      "id": "cyber-landgrafen",
+      "name": "Cyber-Landgrafen",
+      "motto": "Burg-Update erfolgreich installiert",
+      "room": "Elisabethkemenate",
+      "token": "M4iHjaiv8dDbJp3FFLj5X02"
+    },
+    {
+      "id": "wissens-waechter",
+      "name": "Wissens-Wächter",
+      "motto": "Die Prüfungskommission der Wartburg",
+      "room": "Palas",
+      "token": "k2yh6xp2cKCPYybHOD3WOYE"
+    },
+    {
+      "id": "zukunfts-schmiede",
+      "name": "Zukunfts-Schmiede",
+      "motto": "Pressekonferenz aus dem Jahr 2050",
+      "room": "Festsaal",
+      "token": "zdNXXLOD2ZJjAh2osOtN4qEx"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "sourceCard": 1,
+      "text": "In welchem Raum der Wartburg übersetzte Martin Luther das Neue Testament?",
+      "answer": "Lutherstube",
+      "options": [
+        "Lutherstube",
+        "Sängersaal",
+        "Elisabethkemenate",
+        "Palas"
+      ]
+    },
+    {
+      "id": 2,
+      "sourceCard": 2,
+      "text": "Wo hielt sich Martin Luther unter dem Namen „Junker Jörg“ auf?",
+      "answer": "Lutherstube",
+      "options": [
+        "Elisabethkemenate",
+        "Lutherstube",
+        "Palas",
+        "Sängersaal"
+      ]
+    },
+    {
+      "id": 3,
+      "sourceCard": 3,
+      "text": "Welcher Raum ist mit der Geschichte vom Tintenfleck verbunden?",
+      "answer": "Lutherstube",
+      "options": [
+        "Sängersaal",
+        "Palas",
+        "Lutherstube",
+        "Elisabethkemenate"
+      ]
+    },
+    {
+      "id": 4,
+      "sourceCard": 5,
+      "text": "Welcher Wartburg-Raum erinnert besonders an Martin Luther?",
+      "answer": "Lutherstube",
+      "options": [
+        "Elisabethkemenate",
+        "Lutherstube",
+        "Palas",
+        "Sängersaal"
+      ]
+    },
+    {
+      "id": 5,
+      "sourceCard": 7,
+      "text": "Welcher Raum verbindet Wartburg, Luther, Neues Testament und Tintenfleck?",
+      "answer": "Lutherstube",
+      "options": [
+        "Lutherstube",
+        "Sängersaal",
+        "Elisabethkemenate",
+        "Palas"
+      ]
+    },
+    {
+      "id": 6,
+      "sourceCard": 8,
+      "text": "Welcher Wartburg-Raum erinnert an den sagenhaften Sängerkrieg?",
+      "answer": "Sängersaal",
+      "options": [
+        "Elisabethkemenate",
+        "Sängersaal",
+        "Palas",
+        "Lutherstube"
+      ]
+    },
+    {
+      "id": 7,
+      "sourceCard": 9,
+      "text": "Wo würde ein mittelalterlicher Song-Contest vermutlich stattfinden?",
+      "answer": "Sängersaal",
+      "options": [
+        "Sängersaal",
+        "Lutherstube",
+        "Elisabethkemenate",
+        "Palas"
+      ]
+    },
+    {
+      "id": 8,
+      "sourceCard": 10,
+      "text": "Welcher Raum passt zu Minnesängern, Musik und Wettstreit?",
+      "answer": "Sängersaal",
+      "options": [
+        "Elisabethkemenate",
+        "Sängersaal",
+        "Palas",
+        "Lutherstube"
+      ]
+    },
+    {
+      "id": 9,
+      "sourceCard": 12,
+      "text": "Welcher Raum der Wartburg klingt schon durch seinen Namen nach Gesang?",
+      "answer": "Sängersaal",
+      "options": [
+        "Lutherstube",
+        "Palas",
+        "Sängersaal",
+        "Elisabethkemenate"
+      ]
+    },
+    {
+      "id": 10,
+      "sourceCard": 13,
+      "text": "Wo treffen sich in der Wartburg-Geschichte Musik, Dichtung und Legende?",
+      "answer": "Sängersaal",
+      "options": [
+        "Elisabethkemenate",
+        "Sängersaal",
+        "Palas",
+        "Lutherstube"
+      ]
+    },
+    {
+      "id": 11,
+      "sourceCard": 15,
+      "text": "Welcher Raum erinnert an Elisabeth von Thüringen?",
+      "answer": "Elisabethkemenate",
+      "options": [
+        "Elisabethkemenate",
+        "Lutherstube",
+        "Sängersaal",
+        "Palas"
+      ]
+    },
+    {
+      "id": 12,
+      "sourceCard": 16,
+      "text": "Wo steht eine historische Landgräfin im Mittelpunkt?",
+      "answer": "Elisabethkemenate",
+      "options": [
+        "Sängersaal",
+        "Elisabethkemenate",
+        "Palas",
+        "Lutherstube"
+      ]
+    },
+    {
+      "id": 13,
+      "sourceCard": 17,
+      "text": "Welcher Wartburg-Raum passt zu Elisabeth, Fürsorge und Mittelalter?",
+      "answer": "Elisabethkemenate",
+      "options": [
+        "Elisabethkemenate",
+        "Lutherstube",
+        "Sängersaal",
+        "Palas"
+      ]
+    },
+    {
+      "id": 14,
+      "sourceCard": 18,
+      "text": "Wo würde man nach einer Geschichte über Elisabeth von Thüringen suchen?",
+      "answer": "Elisabethkemenate",
+      "options": [
+        "Sängersaal",
+        "Elisabethkemenate",
+        "Palas",
+        "Lutherstube"
+      ]
+    },
+    {
+      "id": 15,
+      "sourceCard": 21,
+      "text": "Welcher Raum könnte die Überschrift „Eine starke Frau ihrer Zeit“ tragen?",
+      "answer": "Elisabethkemenate",
+      "options": [
+        "Lutherstube",
+        "Palas",
+        "Elisabethkemenate",
+        "Sängersaal"
+      ]
+    },
+    {
+      "id": 16,
+      "sourceCard": 22,
+      "text": "Welches romanische Gebäude ist das Herzstück der Wartburg?",
+      "answer": "Palas",
+      "options": [
+        "Sängersaal",
+        "Palas",
+        "Elisabethkemenate",
+        "Lutherstube"
+      ]
+    },
+    {
+      "id": 17,
+      "sourceCard": 23,
+      "text": "Wo befand sich das Wohn- und Residenzgebäude der Landgrafen?",
+      "answer": "Palas",
+      "options": [
+        "Palas",
+        "Lutherstube",
+        "Sängersaal",
+        "Elisabethkemenate"
+      ]
+    },
+    {
+      "id": 18,
+      "sourceCard": 24,
+      "text": "Welcher Begriff passt zu Landgrafen, Residenz und romanischer Architektur?",
+      "answer": "Palas",
+      "options": [
+        "Sängersaal",
+        "Palas",
+        "Elisabethkemenate",
+        "Lutherstube"
+      ]
+    },
+    {
+      "id": 19,
+      "sourceCard": 25,
+      "text": "Welches Gebäude erzählt besonders viel über das Leben am mittelalterlichen Hof?",
+      "answer": "Palas",
+      "options": [
+        "Palas",
+        "Lutherstube",
+        "Sängersaal",
+        "Elisabethkemenate"
+      ]
+    },
+    {
+      "id": 20,
+      "sourceCard": 28,
+      "text": "Welches Gebäude verbindet die Wartburg besonders deutlich mit dem 12. Jahrhundert?",
+      "answer": "Palas",
+      "options": [
+        "Sängersaal",
+        "Palas",
+        "Elisabethkemenate",
+        "Lutherstube"
+      ]
+    },
+    {
+      "id": 21,
+      "sourceCard": 29,
+      "text": "In welchem prachtvollen Raum finden heute noch Konzerte statt?",
+      "answer": "Festsaal",
+      "options": [
+        "Lutherstube",
+        "Elisabethkemenate",
+        "Festsaal",
+        "Sängersaal"
+      ]
+    },
+    {
+      "id": 22,
+      "sourceCard": 30,
+      "text": "Welcher Raum befindet sich im obersten Stockwerk und beeindruckt durch seine Architektur?",
+      "answer": "Festsaal",
+      "options": [
+        "Sängersaal",
+        "Festsaal",
+        "Elisabethkemenate",
+        "Lutherstube"
+      ]
+    },
+    {
+      "id": 23,
+      "sourceCard": 31,
+      "text": "Wo wäre der passende Ort für eine besonders feierliche Ansprache?",
+      "answer": "Festsaal",
+      "options": [
+        "Festsaal",
+        "Lutherstube",
+        "Sängersaal",
+        "Elisabethkemenate"
+      ]
+    },
+    {
+      "id": 24,
+      "sourceCard": 34,
+      "text": "Welcher Raum passt zu Konzert, Pracht und oberstem Stockwerk?",
+      "answer": "Festsaal",
+      "options": [
+        "Sängersaal",
+        "Festsaal",
+        "Elisabethkemenate",
+        "Lutherstube"
+      ]
+    },
+    {
+      "id": 25,
+      "sourceCard": 35,
+      "text": "Wo würde selbst die Kaffeepause wahrscheinlich etwas repräsentativer wirken?",
+      "answer": "Festsaal",
+      "options": [
+        "Festsaal",
+        "Lutherstube",
+        "Sängersaal",
+        "Elisabethkemenate"
+      ]
+    }
+  ]
+}
